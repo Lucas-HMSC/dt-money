@@ -34,24 +34,7 @@ const TransactionsContext = createContext<TransactionsContextData>(
 );
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
-  const [transactions, setTransactions] = useState<Transaction[]>([
-    {
-      id: 1,
-      title: 'Freelance de Website',
-      type: 'deposit',
-      category: 'Dev',
-      amount: 6000,
-      createdAt: String(new Date('2021-02-12 09:00:00')),
-    },
-    {
-      id: 2,
-      title: 'Aluguel',
-      type: 'withdraw',
-      category: 'Casa',
-      amount: 1100,
-      createdAt: String(new Date('2021-02-14 11:00:00')),
-    },
-  ]);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   async function createTransaction(transaction: TransactionInput) {
     const newTransaction = {
